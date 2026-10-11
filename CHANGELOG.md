@@ -3,6 +3,30 @@
 `@accurey/nodeid-mcp` follows the NODE ID API `v1` and its OpenAPI description, from which it ships
 its documentation.
 
+## 0.2.0 (2026-10-11)
+
+The designer tools, and the Claude Code plugin `nodeid`.
+
+- **Designer tools.** They return no company data.
+  - `nodeid_list_jurisdictions` lists the jurisdictions NODE ID connects, with their status, from
+    `GET /catalog/jurisdictions`.
+  - `nodeid_get_jurisdiction` reads one jurisdiction's manifest from `GET /catalog/{jurisdiction}`:
+    its identifiers, blocks, modes, prices and source health.
+  - `nodeid_get_rules` gives the rules an integration follows, from the integration guide. With a
+    jurisdiction, it adds that jurisdiction's legal rules.
+  - `nodeid_example_snippet` writes a request to one operation in curl, TypeScript or Python,
+    offline. The snippet reads the key from `NODEID_API_KEY` and sends an `Idempotency-Key` on every
+    `POST`.
+  - `nodeid_quote` prices a request, as before.
+  - The jurisdictions, the manifest and a jurisdiction's rules are read on the sandbox with the
+    sandbox key. The rules and the snippets need no key.
+- **Claude Code plugin `nodeid`.** It installs from this repository's marketplace:
+  `/plugin marketplace add ACCUREY/nodeid-mcp`, then `/plugin install nodeid@accurey`. It holds:
+  - this MCP server, run from this release's tarball;
+  - the skills `integrate-nodeid`, `design-nodeid-request` and `nodeid-webhooks`, which follow the
+    integration guide;
+  - the commands `/nodeid:jurisdictions` and `/nodeid:quote`.
+
 ## 0.1.2 (2026-10-11)
 
 - **README**: the NODE ID logo at the top. No change to the server.

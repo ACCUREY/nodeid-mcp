@@ -82,7 +82,7 @@
 > 🏭 Production · [api.nodeid.co](https://api.nodeid.co/agents.md) — documented here, never called\
 > 🔑 Client portal · [app.nodeid.co](https://app.nodeid.co) — API keys, services, credit (people only)
 >
-> **📦 Version:** 0.1.2 · **Released:** 2026-10-11 · **Distribution:** GitHub Releases only (no npm registry)
+> **📦 Version:** 0.2.0 · **Released:** 2026-10-11 · **Distribution:** GitHub Releases only (no npm registry)
 
 ---
 
@@ -93,6 +93,7 @@
 
 - [Overview](#-overview)
 - [Quick Start](#-quick-start)
+- [Claude Code Plugin](#-claude-code-plugin)
 - [Tools](#-tools)
 - [Security Model](#-security-model)
 - [Documentation](#-documentation)
@@ -119,6 +120,7 @@ gives an AI coding agent what it needs to integrate the NODE ID API into an appl
 | Capability                | Description                                                                                        | Needs a key |
 | ------------------------- | -------------------------------------------------------------------------------------------------- | :---------: |
 | **Offline documentation** | Every operation of the API, its parameters and request body, and the integration guide `agents.md` |     No      |
+| **Request design**        | The jurisdictions, a jurisdiction's manifest and legal rules, a quote, and a code snippet per call | Sandbox key |
 | **Sandbox calls**         | Real answers from `https://sandbox.nodeid.co`, with synthetic companies and nothing billed         | Sandbox key |
 | **Safe by construction**  | Never reads production data, never accepts a live key, never returns a verified person's fields    |      —      |
 
@@ -134,7 +136,7 @@ Each release is a tarball attached to a [GitHub release](https://github.com/ACCU
 of this repository. Run it by its exact version:
 
 ```bash
-npx -y https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.2/accurey-nodeid-mcp-0.1.2.tgz
+npx -y https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.2.0/accurey-nodeid-mcp-0.2.0.tgz
 ```
 
 ### 2. Add it to your agent
@@ -148,7 +150,7 @@ For Claude Code, in `.mcp.json` at the root of your project:
       "command": "npx",
       "args": [
         "-y",
-        "https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.2/accurey-nodeid-mcp-0.1.2.tgz"
+        "https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.2.0/accurey-nodeid-mcp-0.2.0.tgz"
       ],
       "env": { "NODEID_API_KEY": "${NODEID_API_KEY}" }
     }
@@ -181,6 +183,31 @@ export NODEID_API_KEY=nodeid_test_...
 
 ---
 
+## 🧩 Claude Code Plugin
+
+In [Claude Code](https://code.claude.com), install the plugin `nodeid` from this repository's
+marketplace. It holds this MCP server, run from its release tarball, and skills that follow the
+integration guide:
+
+```text
+/plugin marketplace add ACCUREY/nodeid-mcp
+/plugin install nodeid@accurey
+```
+
+| Part                                     | What it does                                                                      |
+| ---------------------------------------- | --------------------------------------------------------------------------------- |
+| MCP server `nodeid`                      | The tools below, with `NODEID_API_KEY` and `NODEID_BASE_URL` read from your shell |
+| Skill `integrate-nodeid`                 | Integrates the API server side, as `agents.md` says                               |
+| Skill `design-nodeid-request`            | Chooses the jurisdictions, blocks and mode of a request, and prices it            |
+| Skill `nodeid-webhooks`                  | Writes the receiver of the signed events                                          |
+| Command `/nodeid:jurisdictions [region]` | Lists the jurisdictions NODE ID connects                                          |
+| Command `/nodeid:quote <code> <blocks>`  | Prices a request on the sandbox                                                   |
+
+Set the sandbox key in the shell before starting Claude Code (step 3 above). The plugin's version is
+the MCP's: update the marketplace (`/plugin marketplace update accurey`) to move to a new release.
+
+---
+
 ## 🧰 Tools
 
 | Tool                                 | What it does                                                               | Key |
@@ -188,6 +215,10 @@ export NODEID_API_KEY=nodeid_test_...
 | `nodeid_docs_search`                 | Searches the operations and the integration guide                          |  —  |
 | `nodeid_docs_operation`              | Describes one operation: parameters, request body, answers                 |  —  |
 | `nodeid_docs_guide`                  | Reads `agents.md`, whole or one section                                    |  —  |
+| `nodeid_get_rules`                   | The rules an integration follows; with a jurisdiction, its legal rules     | (✓) |
+| `nodeid_example_snippet`             | A request to one operation in curl, TypeScript or Python                   |  —  |
+| `nodeid_list_jurisdictions`          | `GET /catalog/jurisdictions`: the jurisdictions and their status           |  ✓  |
+| `nodeid_get_jurisdiction`            | `GET /catalog/{jurisdiction}`: identifiers, blocks, modes, prices, health  |  ✓  |
 | `nodeid_services`                    | `GET /catalog/services`: the services and the application's subscriptions  |  ✓  |
 | `nodeid_resolve`                     | `POST /resolve`: ranked candidates (sandbox: jurisdiction `ZZ`)            |  ✓  |
 | `nodeid_entity`                      | `GET /entities/{node_id}`: the canonical view of a company                 |  ✓  |
@@ -196,6 +227,9 @@ export NODEID_API_KEY=nodeid_test_...
 | `nodeid_identity_verification_get`   | `GET /identity/verifications/{id}`: the outcome, without the person's data |  ✓  |
 
 **Resource:** `nodeid://agents.md`, the integration guide for agents.
+
+(✓): `nodeid_get_rules` needs the key only for a jurisdiction's legal rules. The designer tools
+(the jurisdictions, a manifest, the rules, a quote, a snippet) return no company data.
 
 In the sandbox, use the synthetic jurisdiction `ZZ` and its test company numbers `ZZ000001` and
 `ZZ000002`.
@@ -233,7 +267,8 @@ against these frameworks; the badges above state where each one stands.
 ## 📦 This Repository
 
 It holds the released files of the package only: the bundle `dist/nodeid-mcp.js`, the licences of
-the packages bundled in it, this README, the changelog, the licence and the security policy. The
+the packages bundled in it, this README, the changelog, the licence, the security policy, and the
+Claude Code plugin (`plugin/`) with its marketplace (`.claude-plugin/marketplace.json`). The
 package is not published to any npm registry: install it only from this repository's releases.
 Pull requests are not merged here.
 
@@ -306,5 +341,5 @@ See [LICENSE](LICENSE). The licences of the bundled packages are in `dist/THIRD_
 ---
 
 <p align="center">
-  <sub>Version 0.1.2 | Released 2026-10-11 | © 2026 Accurey, Inc. | MIT License</sub>
+  <sub>Version 0.2.0 | Released 2026-10-11 | © 2026 Accurey, Inc. | MIT License</sub>
 </p>

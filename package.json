@@ -1,6 +1,6 @@
 {
   "name": "@accurey/nodeid-mcp",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "description": "The integration MCP of NODE ID: searches the API's documentation and calls the sandbox, so that a client's AI agent integrates the API (stdio).",
   "license": "MIT",
@@ -12,7 +12,8 @@
     "nodeid",
     "accurey",
     "kyb",
-    "kyc"
+    "kyc",
+    "claude-code-plugin"
   ],
   "repository": {
     "type": "git",
@@ -28,7 +29,15 @@
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
-    "SECURITY.md"
+    "SECURITY.md",
+    ".claude-plugin/marketplace.json",
+    "plugin/.claude-plugin/plugin.json",
+    "plugin/.mcp.json",
+    "plugin/skills/integrate-nodeid/SKILL.md",
+    "plugin/skills/design-nodeid-request/SKILL.md",
+    "plugin/skills/nodeid-webhooks/SKILL.md",
+    "plugin/commands/jurisdictions.md",
+    "plugin/commands/quote.md"
   ],
   "engines": {
     "node": ">=20"

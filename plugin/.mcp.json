@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "nodeid": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.2.0/accurey-nodeid-mcp-0.2.0.tgz"
+      ],
+      "env": {
+        "NODEID_API_KEY": "${NODEID_API_KEY:-}",
+        "NODEID_BASE_URL": "${NODEID_BASE_URL:-}"
+      }
+    }
+  }
+}
