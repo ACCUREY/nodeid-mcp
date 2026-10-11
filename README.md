@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://nodedb.nodehq.co/storage/v1/object/public/images/node-id-logo.png" alt="NODE ID logo" width="320"/>
+</p>
+
 <h1 align="center">NODE ID — Integration MCP</h1>
 
 <p align="center">
@@ -78,7 +82,7 @@
 > 🏭 Production · [api.nodeid.co](https://api.nodeid.co/agents.md) — documented here, never called\
 > 🔑 Client portal · [app.nodeid.co](https://app.nodeid.co) — API keys, services, credit (people only)
 >
-> **📦 Version:** 0.1.1 · **Released:** 2026-10-11 · **Distribution:** GitHub Releases only (no npm registry)
+> **📦 Version:** 0.1.2 · **Released:** 2026-10-11 · **Distribution:** GitHub Releases only (no npm registry)
 
 ---
 
@@ -130,7 +134,7 @@ Each release is a tarball attached to a [GitHub release](https://github.com/ACCU
 of this repository. Run it by its exact version:
 
 ```bash
-npx -y https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.1/accurey-nodeid-mcp-0.1.1.tgz
+npx -y https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.2/accurey-nodeid-mcp-0.1.2.tgz
 ```
 
 ### 2. Add it to your agent
@@ -144,7 +148,7 @@ For Claude Code, in `.mcp.json` at the root of your project:
       "command": "npx",
       "args": [
         "-y",
-        "https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.1/accurey-nodeid-mcp-0.1.1.tgz"
+        "https://github.com/ACCUREY/nodeid-mcp/releases/download/v0.1.2/accurey-nodeid-mcp-0.1.2.tgz"
       ],
       "env": { "NODEID_API_KEY": "${NODEID_API_KEY}" }
     }
@@ -302,5 +306,5 @@ See [LICENSE](LICENSE). The licences of the bundled packages are in `dist/THIRD_
 ---
 
 <p align="center">
-  <sub>Version 0.1.1 | Released 2026-10-11 | © 2026 Accurey, Inc. | MIT License</sub>
+  <sub>Version 0.1.2 | Released 2026-10-11 | © 2026 Accurey, Inc. | MIT License</sub>
 </p>
