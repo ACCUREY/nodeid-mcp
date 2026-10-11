@@ -1,0 +1,36 @@
+{
+  "name": "@accurey/nodeid-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The integration MCP of NODE ID: searches the API's documentation and calls the sandbox, so that a client's AI agent integrates the API (stdio).",
+  "license": "MIT",
+  "author": "Accurey, Inc.",
+  "homepage": "https://github.com/ACCUREY/nodeid-mcp#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "nodeid",
+    "accurey",
+    "kyb",
+    "kyc"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ACCUREY/nodeid-mcp.git"
+  },
+  "type": "module",
+  "bin": {
+    "nodeid-mcp": "dist/nodeid-mcp.js"
+  },
+  "files": [
+    "dist/nodeid-mcp.js",
+    "dist/THIRD_PARTY_LICENSES.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}
