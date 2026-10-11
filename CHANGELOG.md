@@ -3,6 +3,11 @@
 `@accurey/nodeid-mcp` follows the NODE ID API `v1` and its OpenAPI description, from which it ships
 its documentation.
 
+## 0.1.1 (2026-10-11)
+
+- **README** rewritten for clients: quick start, environment variables, tools, security model and
+  documentation links. No change to the server.
+
 ## 0.1.0 (2026-10-11)
 
 The integration MCP of NODE ID.

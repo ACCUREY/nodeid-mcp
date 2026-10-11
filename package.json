@@ -1,6 +1,6 @@
 {
   "name": "@accurey/nodeid-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "The integration MCP of NODE ID: searches the API's documentation and calls the sandbox, so that a client's AI agent integrates the API (stdio).",
   "license": "MIT",
