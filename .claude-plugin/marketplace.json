@@ -5,12 +5,12 @@
   },
   "metadata": {
     "description": "Accurey's Claude Code plugins: NODE ID.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
       "name": "nodeid",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "description": "Integrate the NODE ID API from Claude Code: the integration MCP (the API's documentation, the designer tools and the sandbox) and skills that follow its integration guide for agents.",
       "author": {
         "name": "Accurey, Inc.",

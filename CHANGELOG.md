@@ -3,6 +3,33 @@
 `@accurey/nodeid-mcp` follows the NODE ID API `v1` and its OpenAPI description, from which it ships
 its documentation.
 
+## 0.3.0 (2026-10-19)
+
+A UAE company by its licence and issuing authority, and the documentation of the API as it stands.
+
+- **`nodeid_resolve` takes `authority`.** A UAE company is found by its licence with the authority
+  that issued it, never by the licence number alone, which repeats across authorities: either the
+  composite in `input` (`DET:1234567`, with `jurisdiction` `AE` or none), or the number in `input`
+  and the authority in `authority`. `ADGM:` and `DIFC:` name a free zone's own number. A UAE
+  licence is answered from the store only.
+- **The documentation it ships**, searched by `nodeid_docs_search`, `nodeid_docs_operation` and
+  `nodeid_docs_guide`, follows the API:
+  - `mode=onboarding` answers from the store with free or lite routes only, `mode=verification`
+    always reads live, and `max_age` may lower a block's freshness, never raise it;
+  - `GET /entities/{node_id}/history`, the ownership graph within a `depth` and a `budget`, and
+    the official documents, listed and ordered; in Saudi Arabia, a company's articles of
+    association and a power of attorney ordered by its number; a filed document already delivered
+    may be served again from the evidence store;
+  - `entity.merged` and `entity.unmerged` tell the applications that monitor or used a merged
+    entity;
+  - a block's `budget_exceeded` error carries a `reason`, `request_budget` or `daily_cap`;
+  - a refusal never states an upstream amount to an external application;
+  - a block is checked against the request budget and the daily cap at the first route that can
+    run for the entity;
+  - Zefix (`CH`) is searched by UID only, a Swiss name through GLEIF;
+  - webhook endpoints are added on the Webhooks page of the client portal.
+- **Claude Code plugin `nodeid`** at 0.3.0, running this release's tarball.
+
 ## 0.2.0 (2026-10-11)
 
 The designer tools, and the Claude Code plugin `nodeid`.
