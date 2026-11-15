@@ -1,7 +1,7 @@
 # Security policy
 
-`@accurey/nodeid-mcp` is the integration MCP of NODE ID, published by Accurey, Inc. It runs on the
-machine of the person who installs it and calls the NODE ID sandbox only.
+`@accurey/nodeid-mcp` is the integration MCP of NODE ID, published by Accurey Pte. Ltd. It runs on
+the machine of the person who installs it and calls the NODE ID sandbox only.
 
 ## Report a vulnerability
 

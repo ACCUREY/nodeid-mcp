@@ -24,7 +24,7 @@
 
 <p align="center">
   <!-- Ownership -->
-  <img src="https://img.shields.io/badge/Publisher-Accurey%2C%20Inc.-navy?style=flat-square" alt="Publisher"/>
+  <img src="https://img.shields.io/badge/Publisher-Accurey%20Pte.%20Ltd.-navy?style=flat-square" alt="Publisher"/>
   <img src="https://img.shields.io/badge/Product-NODE%20ID-darkblue?style=flat-square" alt="Product"/>
   <img src="https://img.shields.io/badge/API-v1-blue?style=flat-square" alt="API v1"/>
 </p>
@@ -287,15 +287,16 @@ Pull requests are not merged here.
 ## 📜 License
 
 > **This package is open source under the MIT License.** NODE ID itself, its API and its data are
-> proprietary services of Accurey, Inc., used under their own terms.
+> proprietary services operated by Accurey Pte. Ltd., used under their own terms.
 
 ### Ownership
 
-| Entity            | Role                                           |
-| ----------------- | ---------------------------------------------- |
-| **Accurey, Inc.** | Publisher of this package, operator of NODE ID |
+| Entity                       | Role                                           |
+| ---------------------------- | ---------------------------------------------- |
+| **Accurey Pte. Ltd.**        | Publisher of this package, operator of NODE ID |
+| **Accurey Technologies Ltd** | Copyright holder of this package               |
 
-**Copyright © 2026 Accurey, Inc.**
+**Copyright © 2026 Accurey Technologies Ltd**
 
 ### Terms (MIT)
 
@@ -310,7 +311,7 @@ Pull requests are not merged here.
 | Warranty       | ❌ None, the software is provided "as is" |
 
 See [LICENSE](LICENSE). The licences of the bundled packages are in `dist/THIRD_PARTY_LICENSES.md`.
-"NODE ID" and "Accurey" are names of Accurey, Inc.; the MIT License grants no right to use them.
+"NODE ID" and "Accurey" are names of the Accurey group; the MIT License grants no right to use them.
 
 ---
 
@@ -334,12 +335,12 @@ See [LICENSE](LICENSE). The licences of the bundled packages are in `dist/THIRD_
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Operated%20by-Accurey%2C%20Inc.-navy?style=flat-square" alt="Operated by Accurey, Inc."/>
+  <img src="https://img.shields.io/badge/Operated%20by-Accurey%20Pte.%20Ltd.-navy?style=flat-square" alt="Operated by Accurey Pte. Ltd."/>
   <img src="https://img.shields.io/badge/Serves-EU_·_KSA_·_UAE_·_SG_·_UK-purple?style=flat-square" alt="Serves 5 jurisdictions"/>
 </p>
 
 ---
 
 <p align="center">
-  <sub>Version 0.3.0 | Released 2026-10-19 | © 2026 Accurey, Inc. | MIT License</sub>
+  <sub>Version 0.3.0 | Released 2026-10-19 | © 2026 Accurey | MIT License</sub>
 </p>
